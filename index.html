@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<div style="background: lightblue; padding: 10px;">
-  <div style="font-size: 24px;">Dashboard</div>
-  <div>
-    <span style="margin-right: 20px;">Home</span>
-    <span style="margin-right: 20px;">Profile</span>
-    <span>Logout</span>
+  <header class="header">
+    <div class="header_title">Dashboard</div>
+    <nav class="header_nav">
+      <span>Home</span>
+      <span>Profile</span>
+      <span>Logout</span>
+    </nav>
+  </header>
+
+  <div class="dashboard">
+
+    <aside class="dashboard_sidebar">
+      <div>Menu 1</div>
+      <div>Menu 2</div>
+      <div>Menu 3</div>
+    </aside>
+
+    <main class="dashboard_main">
+
+      <div class="dashboard_cards">
+        <div class="dashboard_card">Users
+          <div id="data" class="dashboard_user_list"></div>
+        </div>
+        <div class="dashboard_card">Orders</div>
+        <div class="dashboard_card">Revenue</div>
+      </div>
+
+      <div class="dashboard_actions">
+        <button id="loadBtn" onclick="loadData()">Load Data</button>
+      </div>
+
+      <div id="data" class="dashboard_data"></div>
+    </main>
+
   </div>
-</div>
 
-<div class="container">
-
-  <div class="sidebar">
-    <div>Menu 1</div>
-    <div>Menu 2</div>
-    <div>Menu 3</div>
-  </div>
-
-  <div class="main">
-
-    <div class="cards">
-      <div class="card">Users</div>
-      <div class="card">Orders</div>
-      <div class="card">Revenue</div>
-    </div>
-
-    <div>
-      <button onclick="loadData()">Load Data</button>
-    </div>
-
-    <div id="data"></div>
-
-  </div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
