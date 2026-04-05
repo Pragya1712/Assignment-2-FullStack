@@ -1,0 +1,31 @@
+1. What layout issues did you find?
+--> Inspecting the page using devtools, I saw that .container and .main were using display:block property of css.
+    which is making the sidebar and main content on the top of each other instead of aligning side by side.
+    And also cards didn't have wrapping or gap so they were squishing and overlapping instead of wrapping, also there is no responsive design for smaller screens.
+
+
+2. How did you fix them?
+--> Removed all the inline css and used flexbox as given in Instructions.md file.
+    Put display:flex and flex:1 property on the main dashboard container so the sidebar and content align next to each other.
+    For header used justify-content: space-between property.
+    For Cards added flex-wrap:wrap property so the cards will wrap perfectly and add 20px gap between them.
+    For Smaller screns added media query with max-width:768px in this changes the flex-direction to column so the content on the viewport stack properly without making UX bad on smaller screens.
+    Added top border line so that nav bar looks beeter for smaller screens.
+
+
+3. What was the JavaScript bug?
+--> When Load data button clicked it printed undefined 10 times instead actual data (user names). 
+    Checked the network tab and saw that api call is working fine, so the issue was in rendering logic.
+    Scoping and closure big inside the for loop.
+
+
+4. Why did it happen?
+--> The for loop was using var i which is function scoped.As we know setTimeout takes 1 sec, the loop finished its calculation and the i became 10 so when setTimeout function tried to access data[10] which doesn't exist and it gives undefined.
+
+
+5. What improvements did you make?
+--> To fix the bug:
+    Changes var i to let i as let is block-scoped.
+    Improved the DOM rendering by using html string which add all the data in the loop and update the DOM only once in the end instead of using innerHTML += inside the loop which updates the DOM 10 times.
+    Also added loading state, disabled the button while fetching the data so user can't hit button multiple times.
+    Put a catch block to show the error message on the screen to user if api fails.
