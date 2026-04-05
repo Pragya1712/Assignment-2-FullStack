@@ -15,7 +15,7 @@ function loadData() {
     .then(function(data) {
       let htmlString = "";
       for (let i = 0; i < data.length; i++) {
-        htmlString +=`<p> ${data[i].name} </p>`;
+        htmlString +=`<li> ${data[i].name} </li>`;
       }
       setTimeout(function(){
         dataContainer.innerHTML = htmlString;

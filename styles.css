@@ -57,10 +57,17 @@ body{
 .dashboard_card{
   flex: 1;
   min-width: 200px;
+  font-weight: bold;
   background: pink;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.dashboard_user_list{
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #333;
 }
 
 .dashboard_actions{
